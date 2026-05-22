@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Admin — AEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">AEA<span class="dot">.</span><span class="login-sub">admin</span></div>
+      <h2>Portfolio Admin</h2>
+      <p class="login-hint">Enter your password to manage your portfolio</p>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password" />
+      </div>
+      <button class="btn btn-primary" id="loginBtn">Sign In</button>
+      <p class="login-note mono">Default password: <strong>admin123</strong> — change in admin.js</p>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="admin-wrap" id="adminPanel" style="display:none;">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">AEA<span class="dot">.</span></div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-tab="personal">
+          <span class="nav-icon">👤</span> Personal Info
+        </button>
+        <button class="nav-item" data-tab="about">
+          <span class="nav-icon">📝</span> About
+        </button>
+        <button class="nav-item" data-tab="skills">
+          <span class="nav-icon">⚡</span> Skills
+        </button>
+        <button class="nav-item" data-tab="projects">
+          <span class="nav-icon">🚀</span> Projects
+        </button>
+        <button class="nav-item" data-tab="blog">
+          <span class="nav-icon">✍️</span> Blog Posts
+        </button>
+        <button class="nav-item" data-tab="contact">
+          <span class="nav-icon">📬</span> Contact
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank" class="sidebar-link">← View Portfolio</a>
+        <button class="btn-logout" id="logoutBtn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1 class="admin-title" id="tabTitle">Personal Info</h1>
+          <p class="admin-subtitle mono" id="tabSubtitle">Manage your basic information</p>
+        </div>
+        <button class="btn btn-primary save-btn" id="globalSave">Save Changes</button>
+      </div>
+
+      <div class="toast" id="toast">✓ Changes saved successfully!</div>
+
+      <!-- PERSONAL TAB -->
+      <div class="tab-content active" id="tab-personal">
+        <div class="card">
+          <div class="card-title">Basic Information</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="p-name" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Tagline / Role</label>
+              <input type="text" id="p-tagline" placeholder="e.g. Software & Hardware Engineer" />
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="p-location" placeholder="e.g. Accra, Ghana" />
+            </div>
+            <div class="form-group">
+              <label>Focus Area</label>
+              <input type="text" id="p-focus" placeholder="e.g. Systems Engineering" />
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <input type="text" id="p-status" placeholder="e.g. Available for opportunities" />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Links & Contact</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="p-email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>GitHub URL</label>
+              <input type="url" id="p-github" placeholder="https://github.com/..." />
+            </div>
+            <div class="form-group">
+              <label>LinkedIn URL</label>
+              <input type="url" id="p-linkedin" placeholder="https://linkedin.com/in/..." />
+            </div>
+            <div class="form-group">
+              <label>Twitter / X URL</label>
+              <input type="url" id="p-twitter" placeholder="https://twitter.com/..." />
+            </div>
+            <div class="form-group full">
+              <label>Resume / CV URL</label>
+              <input type="url" id="p-resume" placeholder="Link to your resume PDF" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT TAB -->
+      <div class="tab-content" id="tab-about">
+        <div class="card">
+          <div class="card-title">About Paragraphs</div>
+          <p class="card-hint mono">Write each paragraph in a separate box. Add or remove as needed.</p>
+          <div id="aboutParagraphs"></div>
+          <button class="btn btn-outline" id="addParagraph">+ Add Paragraph</button>
+        </div>
+      </div>
+
+      <!-- SKILLS TAB -->
+      <div class="tab-content" id="tab-skills">
+        <div class="card">
+          <div class="card-title">Skills</div>
+          <p class="card-hint mono">Level is a percentage (0–100) representing proficiency.</p>
+          <div id="skillsList"></div>
+          <button class="btn btn-outline" id="addSkill">+ Add Skill</button>
+        </div>
+      </div>
+
+      <!-- PROJECTS TAB -->
+      <div class="tab-content" id="tab-projects">
+        <div class="card">
+          <div class="card-title">Projects</div>
+          <p class="card-hint mono">Showcase your best work. Tags are comma-separated.</p>
+          <div id="projectsList"></div>
+          <button class="btn btn-outline" id="addProject">+ Add Project</button>
+        </div>
+      </div>
+
+      <!-- BLOG TAB -->
+      <div class="tab-content" id="tab-blog">
+        <div class="card">
+          <div class="card-title">Blog Posts</div>
+          <p class="card-hint mono">Add links to articles, blog posts, or write-ups.</p>
+          <div id="blogList"></div>
+          <button class="btn btn-outline" id="addPost">+ Add Post</button>
+        </div>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div class="tab-content" id="tab-contact">
+        <div class="card">
+          <div class="card-title">Contact Section</div>
+          <div class="form-group">
+            <label>Intro Text</label>
+            <textarea id="c-intro" rows="3" placeholder="A short line about being open to opportunities..."></textarea>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

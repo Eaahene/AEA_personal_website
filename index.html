@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahene Emmanuel Adjei — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">AEA<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#blog" class="mobile-link">Blog</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="mono">01 /</span> Hello, I'm</p>
+      <h1 class="hero-name">
+        <span class="line">Ahene</span>
+        <span class="line italic">Emmanuel</span>
+        <span class="line">Adjei</span>
+      </h1>
+      <p class="hero-tagline" id="heroTagline">Software & Hardware Systems Engineer</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="mono"></span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">02 / About</span></div>
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-placeholder">
+            <!--<span class="initials">AEA<span style="color: #fff;">.</span></span>-->
+            <img src="./images/AEA1.png" alt="Ahene Emmanuel Adjei">
+          </div>
+          <div class="about-image-border"><span class="initials">AEA<span style="color: #fff;">.</span></span></div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">Building at the intersection of <em>software</em> and <em>hardware</em></h2>
+          <div id="aboutContent">
+            <p>I'm a passionate engineer with a deep interest in how systems work — from the logic gates up to the application layer. I love exploring the full stack of technology: writing elegant code, understanding embedded systems, and designing solutions that bridge the physical and digital worlds.</p>
+            <p>Currently sharpening my skills and looking for opportunities to build things that matter.</p>
+          </div>
+          <div class="about-meta">
+            <div class="meta-item">
+              <span class="mono meta-label">Location</span>
+              <span>Accra, Ghana</span>
+            </div>
+            <div class="meta-item">
+              <span class="mono meta-label">Focus</span>
+              <span>Systems Engineering</span>
+            </div>
+            <div class="meta-item">
+              <span class="mono meta-label">Status</span>
+              <span class="status-dot"></span><span>Available for opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">03 / Skills</span></div>
+      <h2 class="section-title">Technical <em>Arsenal</em></h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Populated by JS from data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">04 / Projects</span></div>
+      <h2 class="section-title">Selected <em>Work</em></h2>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Populated by JS from data -->
+      </div>
+      <div class="projects-empty" id="projectsEmpty" style="display:none;">
+        <p class="mono">// No projects yet — check back soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section section-alt" id="blog">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">05 / Blog</span></div>
+      <h2 class="section-title">Thoughts & <em>Writing</em></h2>
+      <div class="blog-grid" id="blogGrid">
+        <!-- Populated by JS from data -->
+      </div>
+      <div class="blog-empty" id="blogEmpty" style="display:none;">
+        <p class="mono">// Writing coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-label"><span class="mono">06 / Contact</span></div>
+      <h2 class="section-title contact-title">Let's <em>build</em> something together</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p id="contactIntro">I'm open to internships, collaborations, and interesting projects. Reach out — I'd love to connect.</p>
+          <div class="contact-links" id="contactLinks">
+            <!-- Populated by JS from data -->
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="What's on your mind?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="mono footer-name">Ahene Emmanuel Adjei</span>
+      <span class="mono footer-copy">© <span id="year"></span> — Built with love❤️</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
